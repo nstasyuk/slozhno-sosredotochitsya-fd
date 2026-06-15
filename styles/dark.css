@@ -1,12 +1,72 @@
-/*
-  Специально для тёмной темы при наличии класса,
-  здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
 :root.theme-dark {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --bg-color: #000028;
+  --text-color: #f1b2ce;
+  --decor-color: var(--accent-color);
+  --decor-color-hover: var(--accent-color);
+  --accent-color: #ff0070;
+  --accent-color-hover: rgba(255, 0, 112, 0.4);
+  --title-color: #db00ff;
+  --title-decor-color: var(--bg-color);
+  --bg-image: url(../images/cover-image-dark.png);
+}
+
+:root.theme-dark .header__rec {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  top: 11px;
+  right: 19px;
+  color: var(--accent-color);
+}
+
+:root.theme-dark .header__rec::after {
+  content: '';
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--accent-color);
+}
+
+:root.theme-dark .content__title {
+  color: var(--accent-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #000028;
+    --text-color: #f1b2ce;
+    --decor-color: var(--accent-color);
+    --accent-color: #ff0070;
+    --accent-color-hover: rgba(255, 0, 112, 0.4);
+    --title-color: #db00ff;
+    --title-decor-color: var(--bg-color);
+    --bg-image: url(../images/cover-image-dark.png);
+  }
+
+  .header__rec {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 11px;
+    right: 19px;
+    color: var(--accent-color);
+  }
+
+  .header__rec::after {
+    content: '';
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    box-shadow: 0 0 4px 2px var(--accent-color);
+  }
+
+  .content__title {
+    color: var(--accent-color);
+  }
 }
