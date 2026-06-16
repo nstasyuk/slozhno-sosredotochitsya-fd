@@ -69,4 +69,19 @@
   .content__title {
     color: var(--accent-color);
   }
+
+  @media (min-width: 768px) {
+    .header__rec {
+      top: 20px;
+      right: 30px;
+    }
+  }
+}
+
+
+@media (min-width: 768px) {
+  :root.theme-dark .header__rec {
+    top: 20px;
+    right: 30px;
+  }
 }

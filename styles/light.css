@@ -7,3 +7,7 @@
   --title-decor-color: var(--text-color);
   --bg-image: url(../images/cover-image-light.png);
 }
+
+:root.theme-light .header__rec {
+  display: none;
+}
