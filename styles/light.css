@@ -6,6 +6,7 @@
   --title-color: #ffc2e6;
   --title-decor-color: var(--text-color);
   --bg-image: url(../images/cover-image-light.png);
+  color: var(--text-color);
 }
 
 :root.theme-light .header__rec {
