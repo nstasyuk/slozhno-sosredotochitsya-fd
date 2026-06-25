@@ -38,9 +38,9 @@
 
 .header {
   display: grid;
-  grid-template-rows: min-content min-content min-content;
-  padding: 10px 10px 50px;
-  height: 100vh;
+  grid-template-rows: min-content min-content 1fr;
+  padding: 10px;
+  height: 668px;
   min-height: 668px;
 }
 
@@ -49,18 +49,23 @@
 }
 
 .header__theme-menu {
-  align-self: start;
   justify-self: end;
   margin-top: 65px;
-}
-
-.header__theme-menu-item {
 }
 
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+.header__theme-menu-item {
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .header__theme-menu-button {
@@ -92,17 +97,15 @@
 
 .header__title {
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  padding-top: 70px;
   font-weight: bold;
   line-height: 0.825;
   color: var(--title-color);
   text-shadow: 4px 4px 0 var(--accent-color);
-  align-self: end;
+  padding-top: 70px;
 }
 
 .header__description {
-  margin-top: 52px;
-  align-self: end;
+  align-self: center;
   justify-self: end;
   max-width: 364px;
 }
@@ -117,7 +120,6 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
-  /*padding: 40px 10px 60px 10px;*/
   padding: 40px 10px 40px 10px;
 }
 
@@ -126,7 +128,7 @@
   gap: 20px;
 }
 
-.content__section:has(.content__gallery) {
+.section-gallery {
   gap: 10px;
 }
 
@@ -135,11 +137,6 @@
   font-weight: bold;
 }
 
-.content__text-block {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
 
 .content__card {
   display: flex;
@@ -189,7 +186,7 @@
 .footer {
   display: grid;
   place-items: center;
-  height: 100vh;
+  height: 668px;
   min-height: 668px;
 }
 
@@ -217,23 +214,26 @@
 
   .header {
     grid-template-rows: min-content 1fr min-content;
+    height: 1024px;
+    min-height: 1024px;
     padding-left: 0;
-    padding-bottom: 40px;
   }
 
   .header__theme-menu {
-    margin-top: 182px;
+    margin-top: 0;
     margin-right: 10px;
+    padding-top: 183px;
   }
 
   .header__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    padding-top: 0;
     align-self: center;
-    padding-top: 75px;
   }
 
   .header__description {
     margin-right: 10px;
+    margin-bottom: 170px;
   }
 
   .content__section {
@@ -241,27 +241,25 @@
   }
 
   main.content {
-    padding-left: 20px;
-    padding-top: 60px;
-    padding-right: 20px;
-
+    padding: 60px 20px;
     gap: 80px;
   }
 
-  .content__section:has(.content__gallery) .content__title {
+  .section-gallery .content__title {
     grid-column: 1 / -1;
   }
 
-  .content__section:has(.content__gallery) .content__gallery {
+  .section-gallery .content__gallery {
     grid-column: 1 / -1;
   }
 
-  .content__section_type_vertical_cards .content__text-block{
+  .section-causes .list {
     grid-column: 1 / -1;
   }
 
   .content__gallery {
     grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
 
   .content__picture:nth-child(1) {
@@ -282,16 +280,18 @@
     grid-column: 2 / 4;
   }
 
-  .content__section:has(.content__gallery) {
+  .section-gallery {
     gap: 20px;
+
   }
 
   .footer {
     padding-bottom: 0;
+    height: 1024px;
+    min-height: 1024px;
   }
 
   .footer__title {
-    margin-top: 50px;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
@@ -299,14 +299,18 @@
 
 @media (min-width: 1024px) {
   .header {
-    grid-template-rows: min-content min-content min-content;
+    height: 768px;
+    min-height: 768px;
     padding-right: 0;
     padding-top: 20px;
-    padding-bottom: 50px;
   }
 
   .header__theme-menu {
+    margin-top: 0;
     justify-self: center;
+    padding: 0;
+    margin-right: 0;
+
   }
 
   .header__theme-menu-list {
@@ -314,38 +318,41 @@
   }
 
   .header__theme-menu-button {
-    padding: 0 12px;
+    gap: 40px;
   }
 
   .header__title {
-    align-self: end;
     justify-self: start;
-    padding-top: 280px;
+    padding-top: 155px;
   }
 
   .header__description {
-    align-self: center;
     max-width: 491px;
-    margin-top: 110px;
     margin-right: 20px;
+    margin-bottom: 125px;
   }
 
-  .content__section {
+  .section-why,
+  .section-advices {
     gap: 12px;
   }
 
-  .content__section_type_vertical_cards .content__text-block {
+  .section-causes .list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin-top: 10px;
+  }
+
+  .footer {
+    height: 768px;
+    min-height: 768px;
   }
 
   .footer__title {
     margin-top: 0;
   }
 
-  .decorated-zone::before {
-
+  main.content {
+    padding-bottom: 58px;
   }
 
 }
