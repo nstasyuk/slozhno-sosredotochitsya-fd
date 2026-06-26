@@ -11,11 +11,9 @@
   --content-title-color: var(--accent-color);
 }
 
-:root.theme-dark .header__rec,
-:root:not(.theme-light) .header__rec {
+:root.theme-dark .header__rec {
   display: flex;
 }
-
 
 @media (prefers-color-scheme: dark) {
   :root:not(.theme-light) {
@@ -28,5 +26,9 @@
     --title-decor-color: var(--bg-color);
     --bg-image: url(../images/cover-image-dark.png);
     --content-title-color: var(--accent-color);
+  }
+
+  .header__rec {
+    display: flex;
   }
 }
